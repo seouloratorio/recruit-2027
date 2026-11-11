@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서울오라토리오 합창단 지원 신청서</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf7ef;--paper:#f5ecdc;--ink:#3a2a1c;--brown:#5a3a1e;--gold:#b08a4a;--gold-l:#d9bf8a;--muted:#7a6650;--line:rgba(176,138,74,.35);--err:#b3261e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:"Noto Sans KR",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+/* ── 화면용 ── */
+header.top{padding:18px 0;border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center}
+.back{font-size:14px;text-decoration:none;color:var(--brown)}
+.logo-img{height:44px}
+.head{text-align:center;padding:48px 0 28px}
+.head p{color:var(--brown);font-weight:500;font-size:14px}
+.head h1{font-family:"Nanum Myeongjo",serif;font-weight:800;font-size:clamp(26px,5vw,36px);color:#3d2614;margin-top:6px}
+
+.sec{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 24px;margin-bottom:18px}
+.sec h2{font-family:"Nanum Myeongjo",serif;font-size:19px;color:#3d2614;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px 14px}
+.c2{grid-column:span 2}.c3{grid-column:span 3}.c4{grid-column:span 4}.c6{grid-column:span 6}
+@media(max-width:640px){.grid{grid-template-columns:1fr 1fr}.c2,.c3,.c4,.c6{grid-column:span 2}.half{grid-column:span 1}}
+label.f{display:block;font-size:13px;font-weight:500;color:var(--brown);margin-bottom:5px}
+label.f .req{color:var(--err);margin-left:2px}
+input[type=text],input[type=tel],input[type=email],input[type=date],input[type=month],input[type=number],select,textarea{
+  width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:10px 12px;outline:none;transition:border .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,138,74,.15);background:#fff}
+input.bad{border-color:var(--err)}
+textarea{min-height:150px;resize:vertical;line-height:1.7}
+.radios{display:flex;gap:18px;padding-top:9px}
+.radios label{display:flex;align-items:center;gap:6px;font-size:15px;cursor:pointer}
+.radios input{accent-color:var(--gold);width:17px;height:17px}
+.inline{display:flex;gap:8px}
+.inline input{flex:1}
+.btn-s{flex:none;font:inherit;font-size:14px;border:1px solid var(--gold);background:#fff;color:var(--brown);border-radius:10px;padding:0 14px;cursor:pointer;white-space:nowrap}
+.btn-s:hover{background:var(--paper)}
+
+/* 사진 */
+.photo-row{display:flex;gap:22px;align-items:flex-start}
+.photo{flex:none;width:120px;aspect-ratio:3/4;border:1px dashed var(--gold);border-radius:10px;background:var(--cream) center/cover no-repeat;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--muted);cursor:pointer;position:relative}
+.photo.has span{display:none}
+.photo input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.photo-row .grid{flex:1}
+@media(max-width:640px){.photo-row{flex-direction:column}.photo{margin:0 auto}}
+
+/* 학력 */
+.edu{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;background:#fffdf9}
+.edu .no{font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.period{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.period input{width:auto;flex:1;min-width:130px}
+@media(max-width:640px){.period{flex-direction:column;align-items:stretch}.period input{width:100%}.period span{display:none}}
+.period span{color:var(--muted)}
+
+/* 서명 */
+.sign-wrap{border:1px solid var(--line);border-radius:12px;background:var(--cream);position:relative}
+#sign{width:100%;height:150px;display:block;touch-action:none;cursor:crosshair}
+.sign-ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;pointer-events:none}
+.sign-tools{display:flex;justify-content:flex-end;margin-top:8px}
+.oath{text-align:center;font-family:"Nanum Myeongjo",serif;font-weight:700;font-size:17px;color:#3d2614;margin:6px 0 20px}
+
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:24px 0 70px}
+.btn{font:inherit;font-weight:700;font-size:15px;border:none;border-radius:999px;padding:15px 30px;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#c9a463,#9c7536);color:#fff;box-shadow:0 8px 24px rgba(156,117,54,.3)}
+.btn-line{background:#fff;border:1px solid var(--gold);color:var(--brown)}
+.note{font-size:13px;color:var(--muted);text-align:center;margin-top:-50px;padding-bottom:60px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(80px);background:#3d2614;color:#fff;padding:12px 22px;border-radius:999px;font-size:14px;transition:transform .3s;z-index:50}
+.toast.on{transform:translateX(-50%) translateY(0)}
+
+/* ── 인쇄용 A4 양식 (원본 HWP 레이아웃) ── */
+#sheet{display:none}
+@page{size:A4;margin:12mm 12mm}
+@media print{
+  body{background:#fff}
+  .screen{display:none!important}
+  #sheet{display:block;font-family:"Noto Sans KR",sans-serif;color:#000;font-size:9.5pt}
+  .s-head{text-align:center;margin-bottom:4mm}
+  .s-head img{height:15mm}
+  .s-head h1{font-family:"Nanum Myeongjo",serif;font-size:19pt;letter-spacing:.08em;margin-top:2mm}
+  table{width:100%;border-collapse:collapse;table-layout:fixed}
+  td{border:.6pt solid #000;padding:1.3mm 1.8mm;vertical-align:middle;height:7.4mm;word-break:keep-all;overflow-wrap:anywhere}
+  td.l{text-align:center;font-weight:700;letter-spacing:.15em}
+  td.vl{text-align:center;font-weight:700;line-height:2.2}
+  td.ph{text-align:center;padding:0;color:#555}
+  td.ph img{width:30mm;height:40mm;object-fit:cover;display:block;margin:auto}
+  td.c{text-align:center}
+  .s-box{border:.6pt solid #000;border-top:none;height:24mm;padding:2mm 4mm;font-weight:700;font-size:11pt}
+  .s-foot{border:.6pt solid #000;border-top:none;padding:4mm 6mm 5mm;text-align:center}
+  .s-foot .o{font-weight:700;font-size:11pt}
+  .s-foot .d{text-align:right;margin:4mm 10mm 1mm 0}
+  .s-foot .sg{text-align:right;display:flex;justify-content:flex-end;align-items:center;gap:3mm}
+  .s-foot .sg img{height:12mm}
+  .s-foot h2{font-family:"Nanum Myeongjo",serif;font-size:15pt;margin-top:4mm;letter-spacing:.06em}
+  .career td{height:7.4mm}
+}
+</style>
+</head>
+<body>
+
+<div class="screen">
+<header class="top">
+  <div class="wrap">
+    <img class="logo-img" src="images/logo.jpg" alt="서울오라토리오">
+    <a class="back" href="index.html">← 모집 안내로</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="head">
+    <p>서울특별시지정 전문예술단체</p>
+    <h1>서울오라토리오 합창단 지원 신청서</h1>
+  </div>
+
+  <form id="f" autocomplete="on" novalidate>
+
+  <div class="sec">
+    <h2>지원자</h2>
+    <div class="photo-row">
+      <label class="photo" id="photoBox" aria-label="사진 첨부">
+        <span>사 진<br>(3㎝×4㎝)<br><br>눌러서 첨부</span>
+        <input type="file" id="photo" accept="image/*">
+      </label>
+      <div class="grid">
+        <div class="c6"><label class="f">성명 (한글)<span class="req">*</span></label><input type="text" name="nameKo" required></div>
+        <div class="c3 half"><label class="f">성명 (한자)</label><input type="text" name="nameHanja"></div>
+        <div class="c3 half"><label class="f">성명 (영문)</label><input type="text" name="nameEn"></div>
+      </div>
+    </div>
+    <div class="grid" style="margin-top:14px">
+      <div class="c2"><label class="f">생년월일<span class="req">*</span></label><input type="date" name="birth" id="birth" required></div>
+      <div class="c2 half"><label class="f">나이 (만 세)</label><input type="number" name="age" id="age" min="0" max="120"></div>
+      <div class="c2 half"><label class="f">결혼</label>
+        <div class="radios"><label><input type="radio" name="married" value="기혼">기혼</label><label><input type="radio" name="married" value="미혼">미혼</label></div>
+      </div>
+      <div class="c2"><label class="f">우편번호</label>
+        <div class="inline"><input type="text" name="zip" id="zip" inputmode="numeric" maxlength="5"><button type="button" class="btn-s" id="findZip">주소 검색</button></div>
+      </div>
+      <div class="c4"><label class="f">주소</label><input type="text" name="addr" id="addr"></div>
+      <div class="c2"><label class="f">전화번호</label><input type="tel" name="tel"></div>
+      <div class="c2 half"><label class="f">휴대폰<span class="req">*</span></label><input type="tel" name="mobile" required></div>
+      <div class="c2 half"><label class="f">E-mail</label><input type="email" name="email"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>학력사항</h2>
+    <div id="eduList"></div>
+  </div>
+
+  <div class="sec">
+    <h2>기타 사항</h2>
+    <div class="grid">
+      <div class="c2"><label class="f">현재근무처 — 근무 시작일</label><input type="date" name="workFrom"></div>
+      <div class="c4"><label class="f">근무처</label><input type="text" name="workPlace"></div>
+      <div class="c3"><label class="f">종교(교회명)</label><input type="text" name="religion"></div>
+      <div class="c3"><label class="f">입단 경로</label><input type="text" name="route"></div>
+      <div class="c6"><label class="f">연주경력과 현 활동사항</label><textarea name="career" id="career" placeholder="한 줄에 하나씩 입력해 주세요."></textarea></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="oath">위와 같이 소정의 서류를 갖추어 서울오라토리오 합창단에 지원합니다.</p>
+    <div class="grid">
+      <div class="c2"><label class="f">작성일</label><input type="date" name="date" id="date"></div>
+      <div class="c4"><label class="f">지원자</label><input type="text" id="signName" readonly tabindex="-1" style="background:#fff"></div>
+      <div class="c6"><label class="f">서명</label>
+        <div class="sign-wrap"><canvas id="sign"></canvas><div class="sign-ph" id="signPh">여기에 서명해 주세요</div></div>
+        <div class="sign-tools"><button type="button" class="btn-s" id="clearSign" style="padding:6px 14px">서명 지우기</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="btn btn-line" id="reset">새로 작성</button>
+    <button type="submit" class="btn btn-gold">신청서 인쇄 / PDF 저장</button>
+  </div>
+  <p class="note">입력 내용은 이 기기의 브라우저에만 임시 저장되며, 어디에도 전송되지 않습니다.</p>
+  </form>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- 인쇄용 양식 -->
+<div id="sheet">
+  <div class="s-head">
+    <img src="images/logo.jpg" alt="">
+    <h1>서울오라토리오 합창단 지원 신청서</h1>
+  </div>
+  <table>
+    <colgroup><col style="width:6%"><col style="width:12%"><col style="width:9%"><col style="width:17%"><col style="width:9%"><col style="width:15%"><col style="width:9%"><col style="width:23%"></colgroup>
+    <tr><td class="vl" rowspan="7">지<br>원<br>자</td><td class="l" rowspan="3">성 명</td><td class="c">한글</td><td colspan="4" data-k="nameKo"></td><td class="ph" rowspan="5" id="pPhoto">사 진<br>(3㎝×4㎝)</td></tr>
+    <tr><td class="c">한자</td><td colspan="4" data-k="nameHanja"></td></tr>
+    <tr><td class="c">영문</td><td colspan="4" data-k="nameEn"></td></tr>
+    <tr><td class="l">나 이</td><td colspan="2" class="c" id="pAge">만 &nbsp;&nbsp;&nbsp; 세</td><td class="l">결 혼</td><td colspan="2" class="c" id="pMarried">기혼 · 미혼</td></tr>
+    <tr><td class="l">생년월일</td><td colspan="5" data-k="birthTxt"></td></tr>
+    <tr><td class="l" style="height:13mm">주 소</td><td colspan="6" id="pAddr"></td></tr>
+    <tr><td class="l">전화번호</td><td colspan="2" data-k="tel"></td><td class="c" style="font-weight:700">휴대폰</td><td data-k="mobile" style="white-space:nowrap;font-size:9pt"></td><td class="c" style="font-weight:700">E-mail</td><td data-k="email" style="font-size:8.5pt"></td></tr>
+  </table>
+  <table style="border-top:none" id="pEdu"></table>
+  <table style="border-top:none">
+    <colgroup><col style="width:13%"><col></colgroup>
+    <tr><td class="l" style="letter-spacing:0">현재근무처</td><td id="pWork"></td></tr>
+    <tr><td class="l" style="letter-spacing:0">종교(교회명)</td><td data-k="religion"></td></tr>
+    <tr><td class="l" style="letter-spacing:0">입단 경로</td><td data-k="route"></td></tr>
+  </table>
+  <table style="border-top:none" class="career" id="pCareer"></table>
+  <div class="s-box">평 가 :</div>
+  <div class="s-foot">
+    <p class="o">위와 같이 소정의 서류를 갖추어 서울오라토리오 합창단에 지원합니다.</p>
+    <p class="d" id="pDate">년 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 월 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 일</p>
+    <div class="sg">지원자 : <span id="pSignName" style="min-width:30mm;text-align:center"></span><img id="pSign" alt="" style="display:none">(서명)</div>
+    <h2>서울오라토리오 합창단</h2>
+  </div>
+</div>
+
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" async></script>
+<script>
+const $=s=>document.querySelector(s), f=$('#f'), KEY='seouloratorio-apply';
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),2400)};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* 학력 4행 (원본: 대학 2행, 대학원 2행) */
+const EDU=[['대학','학부(과)'],['대학','학부(과)'],['대학원','학과'],['대학원','학과']];
+$('#eduList').innerHTML=EDU.map(([t,d],i)=>`
+  <div class="edu"><div class="no">${i+1}. ${t}</div>
+    <div class="grid">
+      <div class="c6"><label class="f">기간</label><div class="period"><input type="date" name="e${i}from" aria-label="입학일"><span>~</span><input type="month" name="e${i}to" aria-label="졸업 연월"></div></div>
+      <div class="c2"><label class="f">대학교</label><input type="text" name="e${i}univ"></div>
+      <div class="c2"><label class="f">${t}</label><input type="text" name="e${i}college"></div>
+      <div class="c2"><label class="f">${d}</label><div class="inline"><input type="text" name="e${i}major"><select name="e${i}st" style="width:auto;flex:none"><option value="">-</option><option>졸업</option><option>예정</option></select></div></div>
+    </div></div>`).join('');
+
+/* 만 나이 자동 계산 */
+$('#birth').addEventListener('change',e=>{
+  const b=new Date(e.target.value); if(isNaN(b))return;
+  const n=new Date(); let a=n.getFullYear()-b.getFullYear();
+  if(n.getMonth()<b.getMonth()||(n.getMonth()===b.getMonth()&&n.getDate()<b.getDate()))a--;
+  $('#age').value=a; save();
+});
+$('#date').value=new Date().toLocaleDateString('sv-SE');
+f.nameKo.addEventListener('input',()=>$('#signName').value=f.nameKo.value);
+
+/* 우편번호 검색 (다음 우편번호 서비스) */
+$('#findZip').onclick=()=>{
+  if(!window.daum?.Postcode){toast('주소 검색을 불러오지 못했습니다. 직접 입력해 주세요.');return}
+  new daum.Postcode({oncomplete:d=>{$('#zip').value=d.zonecode;$('#addr').value=(d.roadAddress||d.jibunAddress)+' ';$('#addr').focus();save()}}).open();
+};
+
+/* 사진 */
+let photoData='';
+const setPhoto=src=>{photoData=src;const b=$('#photoBox');b.style.backgroundImage=src?`url(${src})`:'';b.classList.toggle('has',!!src)};
+$('#photo').addEventListener('change',e=>{
+  const file=e.target.files[0]; if(!file)return;
+  const img=new Image(), r=new FileReader();
+  r.onload=()=>{img.onload=()=>{ // 3:4로 잘라 600x800 축소
+    const c=document.createElement('canvas');c.width=600;c.height=800;const x=c.getContext('2d');
+    const s=Math.max(600/img.width,800/img.height),w=img.width*s,h=img.height*s;
+    x.drawImage(img,(600-w)/2,(800-h)/2,w,h);setPhoto(c.toDataURL('image/jpeg',.85));save()};img.src=r.result};
+  r.readAsDataURL(file);
+});
+
+/* 서명 패드 */
+const cv=$('#sign'),cx=cv.getContext('2d');let drawing=false,signed=false;
+const fit=()=>{const d=signed?cv.toDataURL():null,r=devicePixelRatio||1;cv.width=cv.offsetWidth*r;cv.height=cv.offsetHeight*r;cx.scale(r,r);cx.lineWidth=2.4;cx.lineCap=cx.lineJoin='round';cx.strokeStyle='#1a1a1a';if(d)loadSign(d)};
+const loadSign=d=>{const i=new Image();i.onload=()=>{cx.drawImage(i,0,0,cv.offsetWidth,cv.offsetHeight);signed=true;$('#signPh').style.display='none'};i.src=d};
+const pos=e=>{const r=cv.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]};
+cv.addEventListener('pointerdown',e=>{drawing=true;cv.setPointerCapture(e.pointerId);cx.beginPath();cx.moveTo(...pos(e));$('#signPh').style.display='none'});
+cv.addEventListener('pointermove',e=>{if(!drawing)return;cx.lineTo(...pos(e));cx.stroke();signed=true});
+const end=()=>{if(drawing){drawing=false;save()}};
+cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
+$('#clearSign').onclick=()=>{cx.clearRect(0,0,cv.width,cv.height);signed=false;$('#signPh').style.display='';save()};
+addEventListener('resize',fit);
+
+/* 임시 저장 / 복원 */
+function save(){
+  const d=Object.fromEntries(new FormData(f));delete d[''];
+  d._photo=photoData;d._sign=signed?cv.toDataURL():'';
+  try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}
+}
+f.addEventListener('input',save);f.addEventListener('change',save);
+function restore(){
+  let d;try{d=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+  fit(); if(!d)return;
+  for(const[k,v]of Object.entries(d)){
+    const el=f.elements[k]; if(!el||k.startsWith('_'))continue;
+    if(el instanceof RadioNodeList){[...el].forEach(r=>r.checked=r.value===v)}else el.value=v;
+  }
+  $('#signName').value=f.nameKo.value;
+  if(d._photo)setPhoto(d._photo); if(d._sign)loadSign(d._sign);
+}
+restore();
+
+$('#reset').onclick=()=>{
+  if(!confirm('입력한 내용을 모두 지우고 새로 작성할까요?'))return;
+  try{localStorage.removeItem(KEY)}catch(e){}
+  f.reset();setPhoto('');$('#clearSign').click();$('#signName').value='';$('#date').value=new Date().toLocaleDateString('sv-SE');
+};
+
+/* 인쇄용 양식 채우기 */
+const ymd=v=>{if(!v)return'';const[y,m,d]=v.split('-');return`${y}년 ${+m}월`+(d?` ${+d}일`:'')};
+function fill(){
+  const d=Object.fromEntries(new FormData(f));
+  d.birthTxt=ymd(d.birth);
+  document.querySelectorAll('#sheet [data-k]').forEach(td=>td.textContent=d[td.dataset.k]||'');
+  $('#pAge').innerHTML=`만 &nbsp;${esc(d.age)||'&nbsp;&nbsp;&nbsp;'}&nbsp; 세`;
+  $('#pMarried').innerHTML=['기혼','미혼'].map(x=>d.married===x?`<b style="border:.8pt solid #000;border-radius:50%;padding:0 1mm">${x}</b>`:x).join(' · ');
+  $('#pAddr').innerHTML=`<div style="font-size:8.5pt">( ${esc(d.zip)||'&nbsp;'.repeat(10)} )</div>${esc(d.addr)}`;
+  $('#pPhoto').innerHTML=photoData?`<img src="${photoData}" alt="">`:'사 진<br>(3㎝×4㎝)';
+  $('#pEdu').innerHTML='<colgroup><col style="width:6%"><col style="width:25%"><col style="width:22%"><col style="width:20%"><col></colgroup>'+
+    EDU.map(([t,dep],i)=>{const st=d[`e${i}st`];
+      return `<tr>${i?'':'<td class="vl" rowspan="4">학<br>력<br>사<br>항</td>'}
+      <td class="c" style="font-size:8.5pt">${ymd(d[`e${i}from`])||'년 &nbsp; 월 &nbsp; 일'} ~ ${ymd(d[`e${i}to`])||'년 &nbsp; 월'}</td>
+      <td style="font-size:8.5pt">${esc(d[`e${i}univ`])} 대학교</td>
+      <td style="font-size:8.5pt">${esc(d[`e${i}college`])} ${t}</td>
+      <td style="font-size:8.5pt">${esc(d[`e${i}major`])} ${dep}(${st?`<b>${st}</b>`:'졸업·예정'})</td></tr>`}).join('');
+  $('#pWork').innerHTML=`${ymd(d.workFrom)||'년 &nbsp;&nbsp; 월 &nbsp;&nbsp; 일'} ~ 현재 &nbsp;&nbsp; (근무처 : ${esc(d.workPlace)||'&nbsp;'.repeat(30)})`;
+  const lines=(d.career||'').split('\n').filter(s=>s.trim());while(lines.length<5)lines.push('');
+  $('#pCareer').innerHTML='<colgroup><col style="width:13%"><col></colgroup>'+lines.map((l,i)=>`<tr>${i?'':`<td class="l" rowspan="${lines.length}" style="letter-spacing:0;line-height:1.7">연주경력과<br>현 활동사항</td>`}<td>${esc(l)}</td></tr>`).join('');
+  $('#pDate').textContent=d.date?ymd(d.date).replace(/ /g,'   '):'';
+  $('#pSignName').textContent=d.nameKo||'';
+  const s=$('#pSign');if(signed){s.src=cv.toDataURL();s.style.display=''}else s.style.display='none';
+}
+
+f.addEventListener('submit',e=>{
+  e.preventDefault();
+  const bad=[...f.querySelectorAll('[required]')].filter(el=>!el.value.trim());
+  f.querySelectorAll('.bad').forEach(el=>el.classList.remove('bad'));
+  if(bad.length){bad.forEach(el=>el.classList.add('bad'));bad[0].focus();toast('필수 항목(*)을 입력해 주세요.');return}
+  if(!signed){toast('서명을 해 주세요.');cv.scrollIntoView({behavior:'smooth',block:'center'});return}
+  fill();setTimeout(()=>print(),50);
+});
+</script>
+</body>
+</html>
