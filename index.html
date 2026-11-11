@@ -40,7 +40,7 @@ a{color:inherit}
 /* ── Hero ── */
 /* 배경: 상단 천사 이미지 → 아래로 흰색 페이드 (이미지 자체가 흰색으로 끝남) */
 .hero{position:relative;overflow:hidden;background:#fff url(images/hero.jpg) top center/100% auto no-repeat}
-@media(max-width:720px){.hero{background-size:200% auto}.hero .wrap{padding-top:200px!important}}
+@media(max-width:720px){.hero{padding-top:0}.hero .wrap{padding-top:calc(40vw + 20px)!important}}
 /* 하단을 다음 섹션 배경색으로 자연스럽게 연결 */
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(180deg,rgba(245,236,220,0),var(--paper));pointer-events:none}
 .hero .wrap{position:relative;z-index:1;width:100%;padding-top:clamp(190px,30vw,500px);padding-bottom:150px}
