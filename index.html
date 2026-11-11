@@ -24,8 +24,8 @@ a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
 /* ── Header ── */
-.top{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s}
-.top.scrolled{background:rgba(251,247,239,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+.top{position:fixed;inset:0 0 auto;z-index:20;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.top.scrolled{box-shadow:0 4px 18px rgba(90,58,30,.08)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:22px;letter-spacing:.06em;color:var(--brown);text-decoration:none;line-height:1}
 .logo small{display:block;font-size:10px;letter-spacing:.3em;color:var(--gold);margin-top:3px;text-align:center}
@@ -39,7 +39,7 @@ a{color:inherit}
 
 /* ── Hero ── */
 /* 배경: 상단 천사 이미지 → 아래로 흰색 페이드 (이미지 자체가 흰색으로 끝남) */
-.hero{position:relative;overflow:hidden;background:#fff url(images/hero.jpg) top center/100% auto no-repeat}
+.hero{position:relative;overflow:hidden;margin-top:65px;background:#fff url(images/hero.jpg) top center/100% auto no-repeat}
 @media(max-width:720px){.hero{padding-top:0}.hero .wrap{padding-top:calc(40vw + 20px)!important}}
 /* 하단을 다음 섹션 배경색으로 자연스럽게 연결 */
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(180deg,rgba(245,236,220,0),var(--paper));pointer-events:none}
